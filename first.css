@@ -27,6 +27,10 @@ h4 {
     text-transform: uppercase;
 }
 
+.valid {
+    color: red;
+}
+
 .disabled h3 {
     color: #535353;
     cursor: not-allowed;
@@ -161,8 +165,8 @@ nav .container .menu-button {
 }
 
 .product-card .photo-active {
-    background-size: 30.8em 16.5em;
-    transition: 0.2s;
+    background-size: 40.8em 19.5em;
+    transition: 1s;
 }
 
 .product-card .product-details {

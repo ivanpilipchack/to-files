@@ -1,37 +1,66 @@
 $(document).ready(() => {
 
+    //valid login
+    $("form").submit(function(event) {
+        if ($("input:first").val() === "correct") {
+            $("span").text("Validated...").show();
+            return;
+        }
+
+        $(".valid").text("Not valid!").show().fadeOut(3000);
+        event.preventDefault();
+    });
+    //end
+
     $('.shoe-details').show();
 
     $('.more-details-button').on('click', event => {
-        $(event.currentTarget).closest('.product-details').next().toggle()
+        $(event.currentTarget).closest('.product-details').next().toggle();
+        $(event.currentTarget).find('img').toggleClass('rotate');
     });
+});
 
-    $('.shoe-details li').on('click', event => {
-        $(event.currentTarget).addClass('active');
+$('.shoe-details li').on('click', event => {
+    $(event.currentTarget).addClass('active');
 
-        $(event.currentTarget).siblings().removeClass('active')
+    $(event.currentTarget).siblings().removeClass('active')
 
-        $(event.currentTarget).closest('.shoe-details').children().removeClass('disabled')
-        $('.product-detalis').closest('active').next();
-
-    });
-
+    $(event.currentTarget).closest('.shoe-details').children().removeClass('disabled')
+    $('.product-detalis').closest('active').next();
 
 
-    ///////////////////////////////////////////
-    $('.login-button').on('click', () => {
-        $('.login-form').slideToggle(1000);
-        $('.login-button').toggleClass('button-active');
-    });
+});
+//active gallerry
+$('.product-photo').on('mouseenter', (event) => {
+    $(event.currentTarget).addClass('photo-active');
+}).on('mouseleave', (event) => {
+    $(event.currentTarget).removeClass('photo-active');
+});
+//end
 
-    $('.product-photo').on('mouseenter', () => {
-        $(this).addClass('photo-active');
-    }).on('mouseleave', function() {
-        $(this).removeClass('photo-active');
-    });
 
-    $('.menu-button').on('click', () => {
-        $('.menu-button').slideToggle('button-active');
-        $('.nav-menu').toggleClass('hide');
-    });
+///////////////////////////////////////////
+$('.login-button').on('click', () => {
+    $('.login-form').slideToggle(500);
+    $('.login-button').toggleClass('button-active');
+});
+
+$('.product-photo').on('mouseenter', () => {
+    $(this).addClass('photo-active');
+}).on('mouseleave', function() {
+    $(this).removeClass('photo-active');
+});
+
+const $menuButton = $('.menu-button');
+const $navDropdown = $('#nav-dropdown');
+$menuButton.on('click', () => {
+    $navDropdown.slideToggle(500);
+    $menuButton.toggleClass('button-active');
+});
+$menuButton.on('mouseenter', () => {
+    $menuButton.css('color', '#C3FF00');
+    $menuButton.animate({ fontSize: '24px' });
+}).on('mouseleave', () => {
+    $menuButton.css('color', '#EFEFEF');
+    $menuButton.animate({ fontSize: '18px' });
 });
