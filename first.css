@@ -31,6 +31,12 @@ h4 {
     color: red;
 }
 
+.registr {
+    display: none;
+    color: aliceblue;
+    text-align: center;
+}
+
 .disabled h3 {
     color: #535353;
     cursor: not-allowed;
@@ -93,6 +99,16 @@ nav .container .menu-button {
     text-transform: uppercase;
     color: #C3FF00;
     letter-spacing: 0.05em;
+    cursor: pointer;
+}
+
+.absolute {
+    position: relative;
+}
+
+.active {
+    color: #ffd400;
+    text-shadow: 0 0 10px #ffd400;
 }
 
 .hide {

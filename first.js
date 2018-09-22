@@ -41,7 +41,10 @@ $('.product-photo').on('mouseenter', (event) => {
 
 ///////////////////////////////////////////
 $('.login-button').on('click', () => {
-    $('.login-form').slideToggle(500);
+    $('.login-form').slideToggle(500, 'linear', () => {
+        $('.registr').addClass('active');
+        $('.registr').show(1700, 'linear').delay(5000).hide(400, 'linear');
+    });
     $('.login-button').toggleClass('button-active');
 });
 
@@ -63,4 +66,21 @@ $menuButton.on('mouseenter', () => {
 }).on('mouseleave', () => {
     $menuButton.css('color', '#EFEFEF');
     $menuButton.animate({ fontSize: '18px' });
+});
+const $prepend = $('.addTo');
+const $prependTwo = $('.addAnd')
+$prepend.on('mouseenter', (event) => {
+    $(event.currentTarget).prepend('{{ ').addClass('active');
+    $(event.currentTarget).append(' }}');
+
+
+}).on('mouseleave', () => {
+    $(event.currentTarget).text('warnning')
+        .removeClass('active');
+});
+$prependTwo.on('mouseenter', (event) => {
+    $(event.currentTarget).prepend('&& ').addClass('active');
+
+}).on('mouseleave', () => {
+    $(event.currentTarget).text('warnning').removeClass('active');
 });
