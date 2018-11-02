@@ -12,9 +12,9 @@
     <!-- Navigation -->
     <nav>
         <div class='container'>
-            <object type='image/svg+xml' data='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/sole-logo.svg'></object>
+            <img id="logo" src='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/sole-logo.svg' alt="logo">
             <div>
-                <span class='menu-button'>Menu</span>
+                <span class='menu-button'>menu</span>
                 <span class='login-button'>Login</span>
             </div>
         </div>
@@ -43,11 +43,11 @@
     <!-- Login Form -->
     <div class='login-form'>
         <div class='container'>
-            <form>
+            <form required>
                 <h4>Username</h4>
-                <input class='username' />
-                <h4>Password</h4>
-                <input type='password' />
+                <input class='username' type="name" name="name" required />
+                <h4>Email</h4>
+                <input type='email' name="email" required/>
                 <input class='sign-in-button' type='submit' value='Sign In' />
             </form>
             <span class="valid"></span>
@@ -57,12 +57,16 @@
 
     <!-- Product Cards -->
     <div class='container'>
-        <div class='product-card'>
-            <div class='product-photo sole-air-ii'></div>
+        <div class='product-card top'>
+            <div class='product-photo sole-air-ii'>
+                <img class="product_img" src="https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/sole-air-ii.png" alt="">
+                <img class="product_select" src="img/galochka.png" alt="select">
+            </div>
             <div class='product-details'>
-                <h4>Sole Air II</h4>
+
+                <h4 class="details_head">Sole Air II</h4>
                 <div>
-                    <p>$35</p>
+                    <p class="price">$35</p>
                     <div class='more-details-button'>
                         <img src='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/right-arrow.svg' />
                     </div>
@@ -74,105 +78,154 @@
                 <div class='size-chart'>
                     <h4>Size</h4>
                     <ul class='sizes'>
-                        <li>8</li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
+                        <li class="size one">8</li>
+                        <li class="size two">9</li>
+                        <li class="size three">10</li>
+                        <li class="size four">11</li>
+                        <li class="size five">12</li>
                     </ul>
                 </div>
                 <div class='buy-now-button disabled'>
-                    <h3>Add to cart</h3>
+                    <h3 class="add_buy">Add to cart</h3>
+                    <img class="card_img" src="img/double-down.png" alt="down">
                 </div>
-            </div>
-        </div>
-    </div>
+                <div class="credit">
+                    <div class="credit_card">
+                        <div class="cart_wrap">
+                            <img class="number_clear" src="img/rithg.png" alt="clear">
+                            <img class="number_result" src="img/galochka.png" alt="galochka">
+                            <img class="number_eror" src="img/false.png" alt="eror">
+                            <h5 class="cart_number"><em>Your number cart</em></h5>
 
-    <div class='container'>
-        <div class='product-card'>
-            <div class='product-photo tidal-x'></div>
-            <div class='product-details'>
-                <h4>Tidal X</h4>
-                <div>
-                    <p>$40</p>
-                    <div class='more-details-button'>
-                        <img src='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/right-arrow.svg' />
+                        </div>
+                        <form class="cart_form" method="POST" required>
+                            <input class="cart_phone" type="number" name="tel" placeholder="You number cart" required>
+                            <input type="submit" class="send" value="send">
+
+                        </form>
                     </div>
                 </div>
             </div>
 
-            <div class='shoe-details'>
-                <p>The Tidal X's signature rubber midsole make this the perfect running shoe. With a soft mesh upper, and synthetic polymer outsole, these shoes really fly.</p>
-                <div class='size-chart'>
-                    <h4>Size</h4>
-                    <ul class='sizes'>
-                        <li>6</li>
-                        <li>7</li>
-                        <li>10</li>
-                        <li>12</li>
-                        <li>13</li>
-                    </ul>
-                </div>
-                <div class='buy-now-button disabled'>
-                    <h3>Add to cart</h3>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <div class='container'>
-        <div class='product-card'>
-            <div class='product-photo dark-sole-original'></div>
-            <div class='product-details'>
-                <h4>Dark Sole Original</h4>
-                <div>
-                    <p>$60</p>
-                    <div class='more-details-button'>
-                        <img src='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/right-arrow.svg' />
+        <div class='container'>
+            <div class='product-card inside'>
+                <div class='product-photo tidal-x'>
+                    <img class="product_img second" src="https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/tidal-x.png" alt="">
+                    <img class="product_select" src="img/galochka.png" alt="select">
+                </div>
+                <div class='product-details'>
+                    <h4>Tidal X</h4>
+                    <div>
+                        <p>$40</p>
+                        <div class='more-details-button'>
+                            <img src='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/right-arrow.svg' />
+                        </div>
+                    </div>
+                </div>
+
+                <div class='shoe-details'>
+                    <p>The Tidal X's signature rubber midsole make this the perfect running shoe. With a soft mesh upper, and synthetic polymer outsole, these shoes really fly.</p>
+                    <div class='size-chart'>
+                        <h4>Size</h4>
+                        <ul class='sizes'>
+                            <li class="size one">6</li>
+                            <li class="size two">7</li>
+                            <li class="size three">10</li>
+                            <li class="size four">12</li>
+                            <li class="size five">13</li>
+                        </ul>
+                    </div>
+                    <div class='buy-now-button disabled'>
+                        <h3 class="add_buy">Add to cart</h3>
+                        <img class="card_img" src="img/double-down.png" alt="down">
+                    </div>
+                    <div class="credit">
+                        <div class="credit_card">
+                            <div class="cart_wrap">
+                                <h5 class="cart_number"><em>Your number cart</em></h5>
+                            </div>
+                            <form class="cart_form" method="POST" required>
+                                <input class="cart_phone" type="number" name="tel" placeholder=" You number cart" required>
+                                <input type="submit" class="send" value="send">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class='container'>
+            <div class='product-card footer'>
+                <div class='product-photo dark-sole-original'>
+                    <img class="product_img last" src="https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/dark-sole-original.png" alt="">
+                    <img class="product_select" src="img/galochka.png" alt="select">
+                </div>
+                <div class='product-details'>
+                    <h4>Dark Sole Original</h4>
+                    <div>
+                        <p>$60</p>
+                        <div class='more-details-button'>
+                            <img src='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/right-arrow.svg' />
+                        </div>
+                    </div>
+                </div>
+
+                <div class='shoe-details '>
+                    <p>Light up the night with the Dark Sole Original. Lights around the midsole activate when stomped.</p>
+                    <div class='size-chart'>
+                        <h4>Size</h4>
+                        <ul class='sizes'>
+                            <li class="size one">9</li>
+                            <li class="size two">10</li>
+                            <li class="size three">10.5</li>
+                            <li class="size four">11</li>
+                        </ul>
+                    </div>
+                    <div class='buy-now-button disabled'>
+                        <h3 class="add_buy">Add to cart</h3>
+                        <img class="card_img" src="img/double-down.png" alt="down">
+                    </div>
+                    <div class="credit">
+                        <div class="credit_card">
+                            <div class="cart_wrap">
+                                <h5 class="cart_number"><em>Your number cart</em></h5>
+                            </div>
+                            <form class="cart_form" method="POST" action="" required>
+                                <input class="cart_phone" type="number" name="tel" placeholder="You number cart" required>
+                                <input type="submit" class="send" value="send">
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class='shoe-details'>
-                <p>Light up the night with the Dark Sole Original. Lights around the midsole activate when stomped.</p>
-                <div class='size-chart'>
-                    <h4>Size</h4>
-                    <ul class='sizes'>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>10.5</li>
-                        <li>11</li>
-                    </ul>
+        <!-- Shopping cart -->
+        <div class='shopping-cart'>
+            <div class='container'>
+                <div class='cart'>
+                    <object type='image/svg+xml' data='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/shopping-cart.svg'></object>
+                    <h3 class='items-qty'>1</h3>
                 </div>
-                <div class='buy-now-button disabled'>
-                    <h3>Add to cart</h3>
-                </div>
+                <h3>Checkout</h3>
             </div>
         </div>
-    </div>
 
-    <!-- Shopping cart -->
-    <div class='shopping-cart'>
-        <div class='container'>
-            <div class='cart'>
-                <object type='image/svg+xml' data='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/shopping-cart.svg'></object>
-                <h3 class='items-qty'>1</h3>
+        <footer>
+            <div class='container'>
+                <object type='image/svg+xml' data='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/sole-logo.svg'></object>
+                <div>Contact Us</div>
             </div>
-            <h3>Checkout</h3>
-        </div>
-    </div>
+        </footer>
 
-    <footer>
-        <div class='container'>
-            <object type='image/svg+xml' data='https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/sole-logo.svg'></object>
-            <div>Contact Us</div>
-        </div>
-    </footer>
-
-    <script src="jquery-3.3.1.min.js"></script>
-
-    <script src="first.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="file/jv/dist/jquery.validate.js"></script>
+        <script src="first.js"></script>
+        <script src="clear.js"></script>
 </body>
 
 </html>

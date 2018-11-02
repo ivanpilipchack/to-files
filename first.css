@@ -17,7 +17,7 @@ body {
 }
 
 h3 {
-    color: #C3FF00;
+    color: #535353;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -37,11 +37,6 @@ h4 {
     text-align: center;
 }
 
-.disabled h3 {
-    color: #535353;
-    cursor: not-allowed;
-}
-
 .button-active {
     color: #C3FF00;
     background-color: #535353;
@@ -58,7 +53,7 @@ nav .container {
     align-items: center;
 }
 
-nav .container object {
+nav .container #logo {
     width: 4.5em;
     padding: 1.2em 0.5em;
 }
@@ -73,6 +68,15 @@ nav .container .menu-button {
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
+}
+
+input.error {
+    border: 1px solid #ff0000;
+}
+
+label.error {
+    color: #ff0000;
+    font-weight: normal;
 }
 
 .nav-menu {
@@ -102,13 +106,22 @@ nav .container .menu-button {
     cursor: pointer;
 }
 
+.price {
+    font-size: 19px;
+    font-weight: 700;
+}
+
 .absolute {
     position: relative;
 }
 
 .active {
     color: #ffd400;
-    text-shadow: 0 0 10px #ffd400;
+    text-shadow: 0 0 20px #ffd400;
+}
+
+.input {
+    border: 4px solid green;
 }
 
 .hide {
@@ -168,16 +181,38 @@ nav .container .menu-button {
     transition: 0.2s;
 }
 
-.product-card .sole-air-ii {
-    background-image: url("https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/sole-air-ii.png");
+.product_img,
+.product_img_center,
+.product_img_bottom {
+    cursor: pointer;
+    position: absolute;
+    width: 450px;
+    height: 240px;
 }
 
-.product-card .tidal-x {
-    background-image: url("https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/tidal-x.png");
+.product_select {
+    display: none;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    top: 82px;
+    left: 192px;
+    box-shadow: 0 0 15px #C3FF00;
+    border-radius: 50%;
+    opacity: 0.8;
 }
 
-.product-card .dark-sole-original {
-    background-image: url("https://s3.amazonaws.com/codecademy-content/courses/jquery/audit/images/dark-sole-original.png");
+.add_select {
+    border-radius: 5%;
+    border: 2px solid rgb(21, 196, 21);
+    width: 446px;
+    opacity: 0.8;
+}
+
+.end_select {
+    background-color: #ff0000;
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 .product-card .photo-active {
@@ -215,7 +250,7 @@ nav .container .menu-button {
 }
 
 .product-card .product-details .more-details-button .rotate {
-    transition: 0.1s;
+    transition: 0.5s;
     transform: rotate(90deg);
 }
 
@@ -257,6 +292,135 @@ nav .container .menu-button {
     text-align: center;
     padding: 0.75em;
     cursor: pointer;
+}
+
+.sizes {
+    cursor: pointer;
+}
+
+.addSimple {
+    color: #C3FF00;
+}
+
+.addSizes {
+    transform: rotateX(360deg);
+    transition: 0.6s;
+}
+
+.card_img {
+    display: none;
+    width: 35px;
+    height: 22px;
+}
+
+.credit_card {
+    display: none;
+    display: flex;
+    width: 100%;
+    min-height: 150px;
+}
+
+.credit {
+    display: none;
+}
+
+.cart_wrap {
+    transform: rotateY(360deg);
+    opacity: 0.2;
+    margin-top: 0px;
+    height: 150px;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/credit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.cart_number {
+    position: relative;
+    display: none;
+    margin: 80px 20px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #EFEFEF;
+}
+
+.add_wrap {
+    transform: rotateY(0deg);
+    opacity: 1;
+    transition: 1.2s;
+}
+
+.add_wrap_leave {
+    transform: rotateY(360deg);
+    opacity: 0.2;
+    transition: 1.2s;
+}
+
+.addKeyup {
+    transform: rotateX(30deg);
+}
+
+.cart_form {
+    width: 50%;
+    margin: 7px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 62px;
+}
+
+.cart_phone {
+    margin-bottom: 13px;
+    width: 95%;
+    background: none;
+    outline: none;
+    padding: 4px;
+    border: 1px solid #535353;
+    border-bottom: 1px solid gold;
+    border-radius: 2px;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    color: #fff;
+    font-style: italic;
+}
+
+.number_clear,
+.number_result,
+.number_eror {
+    float: right;
+    display: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 77px;
+    right: 3px;
+}
+
+.send {
+    cursor: pointer;
+    background: rgb(160, 137, 9);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+    border-radius: 2px;
+    border: 2px solid rgb(155, 133, 7);
+    outline: none;
+}
+
+.add_cart {
+    transform: rotate(180deg);
+    transition: 0.4s;
+}
+
+.activeCart {
+    color: #ffd400;
+    text-shadow: 0 0 20px #ffd400;
 }
 
 .shopping-cart {
